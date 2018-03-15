@@ -1,10 +1,19 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-th= np.linspace(0,2*np.pi)
-x= np.sin(th)
-y= np.sin(x)
+data = np.loadtxt("fecha_manchas.dat")
+time= data[:,0]
+manchas = data[:,1]
 
-plt.plot(x,y)
-plt.show()
-plt.savefig('grafica1.png')
+
+
+
+
+
+plt.plot(time, manchas, color = 'k')
+
+plt.xlabel("Time (anos)")
+plt.ylabel("Manchas solares")
+plt.title("Tiempo s. Manchas Solares")
+plt.savefig("fecha_manchas.pdf")
+
